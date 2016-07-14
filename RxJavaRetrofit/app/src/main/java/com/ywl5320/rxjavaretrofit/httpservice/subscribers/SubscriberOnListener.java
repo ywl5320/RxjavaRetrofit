@@ -7,5 +7,5 @@ public interface SubscriberOnListener<T> {
 
     void onSucceed(T data);
 
-    void onError(String msg);
+    void onError(int code, String msg);
 }

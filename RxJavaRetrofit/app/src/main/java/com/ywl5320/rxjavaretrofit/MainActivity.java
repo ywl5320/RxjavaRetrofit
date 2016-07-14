@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onError(String msg) {
-                        Toast.makeText(MainActivity.this, msg, Toast.LENGTH_LONG).show();
+                    public void onError(int code, String msg) {
+                        Toast.makeText(MainActivity.this, "status:" + code + "," + msg, Toast.LENGTH_LONG).show();
                         hideLoadDialog();
                     }
                 }));

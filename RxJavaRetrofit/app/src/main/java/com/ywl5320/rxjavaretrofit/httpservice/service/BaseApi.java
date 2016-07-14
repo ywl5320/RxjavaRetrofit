@@ -34,7 +34,7 @@ public class BaseApi {
             if (httpResult.getStatus() == 1) {
                 return httpResult.getData();
             }
-            throw new ExciptionApi(httpResult.getStatus(), httpResult.getMessage());
+            throw new ExceptionApi(httpResult.getStatus(), httpResult.getMessage());
         }
     }
 

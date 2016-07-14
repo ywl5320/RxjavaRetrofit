@@ -1,5 +1,7 @@
 package com.ywl5320.rxjavaretrofit.httpservice.subscribers;
 
+import com.ywl5320.rxjavaretrofit.httpservice.service.ExceptionApi;
+
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
 
@@ -26,6 +28,9 @@ public class HttpSubscriber<T> extends Subscriber<T>{
         }
     }
 
+    /**
+     * 访问网络开始前（可以处理缓存）
+     */
     @Override
     public void onStart() {
         super.onStart();
@@ -44,11 +49,15 @@ public class HttpSubscriber<T> extends Subscriber<T>{
         if(subscriberOnListener != null)
         {
             if (e instanceof SocketTimeoutException) {
-                subscriberOnListener.onError("网络中断，请检查您的网络状态");
+                subscriberOnListener.onError(-1001, "网络超时，请检查您的网络状态");
             } else if (e instanceof ConnectException) {
-                subscriberOnListener.onError("网络中断，请检查您的网络状态");
-            } else {
-                subscriberOnListener.onError(e.getMessage());
+                subscriberOnListener.onError(-1002, "网络链接中断，请检查您的网络状态");
+            } else if(e instanceof ExceptionApi){
+                subscriberOnListener.onError(((ExceptionApi)e).getCode(), ((ExceptionApi)e).getMsg());
+            }
+            else
+            {
+                subscriberOnListener.onError(-1003, "未知错误:" + e.getMessage());
             }
         }
     }
