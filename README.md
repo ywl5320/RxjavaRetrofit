@@ -23,7 +23,7 @@
             Toast.makeText(MainActivity.this, msg, Toast.LENGTH_LONG).show();
             hideLoadDialog();
         }
-    }));
+    }, MainActivity.this));
     
 
 create by ywl5320
