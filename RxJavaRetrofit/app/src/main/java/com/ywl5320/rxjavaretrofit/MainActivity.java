@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "status:" + code + "," + msg, Toast.LENGTH_LONG).show();
                         hideLoadDialog();
                     }
-                }));
+                }, MainActivity.this));
             }
         });
 
