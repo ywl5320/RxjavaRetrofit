@@ -1,11 +1,11 @@
 # RxjavaRetrofit
-###Rxjava + Retrofit网络访问<br/>
-此Demo是根据 <a href="http://gank.io/post/56e80c2c677659311bed9841">RxJava 与 Retrofit 结合的最佳实践</a> 进行的封装，已在项目中使用。
+### Rxjava + Retrofit网络访问<br/>
+#### 此Demo是根据 <a href="http://gank.io/post/56e80c2c677659311bed9841">RxJava 与 Retrofit 结合的最佳实践</a> 进行的封装，已在项目中使用。
 
 实例图片：<br/>
 ![image](https://github.com/wanliyang1990/RxjavaRetrofit/blob/master/imgs/weather.gif)<br/>
 
-####使用方法：
+#### 使用方法：
 
     /**
         这里是访问的百度天气预报接口
@@ -26,4 +26,4 @@
     }, MainActivity.this));
     
 
-create by ywl5320
+# create by ywl5320
